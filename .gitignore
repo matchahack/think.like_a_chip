@@ -1,0 +1,9 @@
+*.json
+*/*.json
+*control_tb
+*control_tb.vcd
+*.fs
+*/*.fs
+libs/nextpnr
+libs/yosys
+libs/openFPGALoader
