@@ -34,7 +34,7 @@ module control_tb;
         button_1 <= 1;
     end
 
-    control #(.N(3)) control_uut(
+    control control_uut(
         .clk(clk),
         .button_0(button_0),
         .button_1(button_1),
