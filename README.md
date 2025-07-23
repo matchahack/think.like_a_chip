@@ -15,3 +15,7 @@ Welcome! If you're here, I hope you want to learn a little about digital logic a
 ## Build and Exploit an FPGA Design
 
 > [Follow readme in 1_ERROR](./1_ERROR/) to exploit a design
+
+## Support
+
+Please do join [here](https://discord.gg/53kBUyYU) for tech-support!
