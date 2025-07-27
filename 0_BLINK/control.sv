@@ -1,28 +1,31 @@
 module control
 (
-    input           clk,
     input           button_0,
-    input           button_1,
-    output  [2:0]   led
+    input           clk,                    // Clock input signal
+    output  [2:0]   led                     // 3-bit LED output
 );
+    parameter STOP  = 0;
+    parameter START = 1;
+    reg state;
 
-    localparam WAIT_TIME = 13500000;
+    reg [31:0] counter;                     // 32-bit counter register
 
-    reg [2:0]   ledCounter      = 0;
-    reg [23:0]  clockCounter    = 0;
-    reg         start           = 0;
+    initial begin
+        state   <= STOP;
+        counter <= 31'd0;                   // Initialize counter to 0
+        led     <= 3'b110;                  // Initialize LED pattern
+    end
 
     always @(posedge clk) begin
-        if (button_0 == 0) start <= 1;
-        if (button_1 == 0) start <= 0;
-        if (start == 1) begin
-            clockCounter <= clockCounter + 1;
-            if (clockCounter == WAIT_TIME) begin
-                clockCounter <= 0;
-                ledCounter <= ledCounter + 1;
+        if (button_0 == 0) state <= START;
+        if (state == START) begin
+            if (counter < 31'd1350_0000)        // Check if counter is less than 135 million (for 0.5s delay)
+                counter <= counter + 1;         // Increment counter
+            else begin
+                counter <= 31'd0;               // Reset counter
+                led[2:0] <= {led[1:0],led[2]};  // Rotate LED pattern left
             end
         end
     end
 
-    assign led = ~ledCounter;
 endmodule

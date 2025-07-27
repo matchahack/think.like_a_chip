@@ -1,8 +1,8 @@
 BOARD=tangnano
-FAMILY=GW1N-9C
-DEVICE=GW1NR-LV9QN88PC6/I5
+FAMILY=GW1NZ-1
+DEVICE=GW1NZ-LV1QN48C6/I5
 TOP=control
-SIZE=9k
+SIZE=
 
 sim:
 	iverilog -o ${TOP}_tb ${TOP}_tb.sv ${TOP}.sv
