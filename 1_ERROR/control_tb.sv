@@ -24,14 +24,14 @@ module control_tb;
         button_0 <= 1;
         button_1 <= 1;
         #(DELAY_10);
-        repeat (5) #(DELAY_10);
-        button_0 <= 0;
-        repeat (5) #(DELAY_10);
-        button_0 <= 1;
         repeat (100) #(DELAY_10);
         button_1 <= 0;
         repeat (5) #(DELAY_10);
         button_1 <= 1;
+        repeat (5) #(DELAY_10);
+        button_0 <= 0;
+        repeat (5) #(DELAY_10);
+        button_0 <= 1;
     end
 
     control control_uut(

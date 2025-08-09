@@ -1,19 +1,19 @@
 module control
 (
-    input           button_0,
-    input           clk,                    // Clock input signal
-    output  [2:0]   led                     // 3-bit LED output
+    input               button_0,
+    input               clk,                    // Clock input signal
+    output logic [2:0]  led                     // 3-bit LED output
 );
     parameter STOP  = 0;
     parameter START = 1;
     reg state;
 
-    reg [31:0] counter;                     // 32-bit counter register
+    reg [31:0] counter;                         // 32-bit counter register
 
     initial begin
         state   <= STOP;
-        counter <= 31'd0;                   // Initialize counter to 0
-        led     <= 3'b110;                  // Initialize LED pattern
+        counter <= 31'd0;                       // Initialize counter to 0
+        led     <= 3'b110;                      // Initialize LED pattern
     end
 
     always @(posedge clk) begin

@@ -14,7 +14,7 @@ module control_tb;
     end
 
     // TEST
-    reg clk, button_0, button_1;
+    reg clk, button_0;
     wire [2:0] led;
 
     always #(DELAY_5) clk = ~clk;
@@ -22,22 +22,16 @@ module control_tb;
     initial begin
         clk      <= 0;
         button_0 <= 1;
-        button_1 <= 1;
         #(DELAY_10);
         repeat (5) #(DELAY_10);
         button_0 <= 0;
         repeat (5) #(DELAY_10);
         button_0 <= 1;
-        repeat (100) #(DELAY_10);
-        button_1 <= 0;
-        repeat (5) #(DELAY_10);
-        button_1 <= 1;
     end
 
     control control_uut(
         .clk(clk),
         .button_0(button_0),
-        .button_1(button_1),
         .led(led)
     );
 
