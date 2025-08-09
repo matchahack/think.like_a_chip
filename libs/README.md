@@ -10,7 +10,7 @@ If TLDR; Try running the following...
 
 > > Install tools: `wsl` for linux-like dev environment, and `usbipd` to tunnel your FPGA programmer through Windows to WSL
 ```
-.\installs_windows.exe
+.\installs_windows.bat
 ```
 
 > > Attach your USB to Linux through Windows
@@ -28,13 +28,15 @@ wsl
 > > Install all FPGA programming tools
 ```
 chmod a+x *.sh
-./installs_linux.sh
+sudo ./installs_linux.sh
 chmod a+x *.sh
 ```
 
 ## Installs for the FPGA toolchain in Mac
 
-> > Install all FPGA programming tools
+> [!WARNING]
+> This install section (for IOS) is not tested
+
 ```
 chmod a+x *.sh
 ./installs_mac.sh
