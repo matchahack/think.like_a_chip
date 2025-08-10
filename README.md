@@ -1,4 +1,4 @@
-# .think_like_a_chip
+# think.like_a_chip
 
 Welcome! If you're here, I hope you want to learn a little about digital logic and secure logic design 📟
 
@@ -18,4 +18,5 @@ Welcome! If you're here, I hope you want to learn a little about digital logic a
 
 ## Support
 
-Please do join [here](https://discord.gg/53kBUyYU) for tech-support!
+> [!TIP]
+> Please do join [here](https://discord.gg/8AbRrbnU5W) for tech-support!
