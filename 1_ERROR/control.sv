@@ -5,11 +5,10 @@ module control
     input               clk,                    // Clock input signal
     output  logic [2:0] led                     // 3-bit LED output
 );
-    parameter STOP  = 0;
-    parameter START = 1;
-    reg state;
+    parameter STOP=0, START=1;
+    logic state;
 
-    reg [31:0] counter;                         // 32-bit counter register
+    logic [31:0] counter;                       // 32-bit counter register
 
     initial begin
         state   <= STOP;

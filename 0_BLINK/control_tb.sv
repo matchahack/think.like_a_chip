@@ -1,9 +1,8 @@
 module control_tb;
 
     // CONFIG
-    parameter DURATION  = 2000;
-    parameter DELAY_5 = 5;
-    parameter DELAY_10 = 10;
+    parameter DURATION=2000, DELAY_5=5,
+                DELAY_10=10;
 
     // GENERATE SIM
     initial begin
@@ -14,7 +13,7 @@ module control_tb;
     end
 
     // TEST
-    reg clk, button_0;
+    logic clk, button_0;
     wire [2:0] led;
 
     always #(DELAY_5) clk = ~clk;
