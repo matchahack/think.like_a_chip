@@ -19,7 +19,7 @@ sudo apt-get install make build-essential libssl-dev zlib1g-dev \
     libudev-dev zlib1g-dev pkg-config g++ clang bison flex \
     gawk tcl-dev graphviz xdot pkg-config zlib1g-dev
 
-sudo apt-get install iverilog
+sudo apt-get install verilator
 sudo apt-get install gtkwave
 
 if [ ! -d "$HOME/.pyenv" ]; then
