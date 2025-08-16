@@ -6,26 +6,26 @@ If TLDR; Try running the following...
 
 ## Installs for the FPGA toolchain in Windows
 
-> Open `Powershell` terminal as admin
+0. Open `Powershell` terminal as admin
 
-> > Install tools: `wsl` for linux-like dev environment, and `usbipd` to tunnel your FPGA programmer through Windows to WSL
+1. Install tools: `wsl` for linux-like dev environment, and `usbipd` to tunnel your FPGA programmer through Windows to WSL
 ```
 .\installs_windows.bat
 ```
 
-> > Attach your USB to Linux through Windows
+2. Attach your USB to Linux through Windows
 ```
 usbipd attach --wsl --busid <your_device_BUSID>
 ```
 
-> Open a `wsl-2` terminal, and run the Ubuntu script...
+3. Open a `wsl-2` terminal, and run the Ubuntu script...
 ```
 wsl
 ```
 
 ## Installs for the FPGA toolchain in Linux (Ubuntu)
 
-> > Install all FPGA programming tools
+0. Install all FPGA programming tools
 ```
 chmod a+x *.sh
 sudo ./installs_linux.sh
@@ -36,6 +36,8 @@ chmod a+x *.sh
 
 > [!WARNING]
 > This install section (for IOS) is not tested
+
+0. Install all FPGA programming tools
 
 ```
 chmod a+x *.sh

@@ -7,8 +7,7 @@ module control
     logic [2:0] state = 3'b000;
     assign led = state;
 
-    always @ (posedge clk) begin
+    always @ (posedge clk)
         if (button_0 == 0) state <= state + 1;
-    end
 
 endmodule

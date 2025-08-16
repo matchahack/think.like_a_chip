@@ -1,3 +1,4 @@
-# Extension
+# EXTENSION
 
-> Here, the challenge is to figure out how to get the traffic light to the fun pattern using only the input buttons!
+> [!IMPORTANT]
+> This example is also a simple traffic light, with the same bug as the previous example - but also another bug. Can you spot the new bug?
