@@ -1,11 +1,11 @@
 sudo rm -rf ~/bsides_bristol_matchahack
+mkdir ~/bsides_bristol_matchahack
 
 cd /usr/local/share
 sudo rm -rf nextpnr/ openFPGALoader/ yosys/
 cd /usr/local/bin
 sudo rm -rf yosys* nextpnr-himbaechel openFPGALoader
 
-mkdir ~/bsides_bristol_matchahack
 cd ~/bsides_bristol_matchahack
 
 start=$SECONDS
@@ -19,8 +19,10 @@ sudo apt-get install make build-essential libssl-dev zlib1g-dev \
     libudev-dev zlib1g-dev pkg-config g++ clang bison flex \
     gawk tcl-dev graphviz xdot pkg-config zlib1g-dev
 
-sudo apt-get install verilator
 sudo apt-get install gtkwave
+
+sudo rm -rf /home/$USER/.pyenv/shims
+rm  ~/.python-version
 
 if [ ! -d "$HOME/.pyenv" ]; then
     curl https://pyenv.run | bash
@@ -29,8 +31,13 @@ if [ ! -d "$HOME/.pyenv" ]; then
     echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 fi
 
-pyenv install 3.9.13
-pyenv global 3.9.13
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+PY_VERSION=3.9.13
+pyenv install $PY_VERSION
+pyenv local $PY_VERSION
 
 pip install apycula
 
@@ -52,7 +59,6 @@ cd ~/bsides_bristol_matchahack
 git clone https://github.com/matchahack/nextpnr.git
 cd nextpnr
 git submodule update --init --recursive
-git checkout e642e21f9bb6ba05b62458e29c04c4e64287ecdc
 mkdir -p build && cd build
 cmake .. -DARCH="himbaechel" -DHIMBAECHEL_UARCH="gowin"
 make -j$(nproc)
@@ -65,6 +71,12 @@ cd yosys
 git submodule update --init --recursive
 make -j$(nproc)
 sudo make -j$(nproc) install
+
+BASHRC="$HOME/.bashrc"
+
+echo '' >> "$BASHRC"
+echo 'export LD_LIBRARY_PATH=/home/$USER/.pyenv/versions/3.9.13/lib:$LD_LIBRARY_PATH' >> "$BASHRC"
+echo 'export PATH=/home/$USER/.pyenv/versions/3.9.13/bin:$PATH' >> "$BASHRC"
 
 duration=$(( SECONDS - start ))
 echo "install time (seconds): " $duration

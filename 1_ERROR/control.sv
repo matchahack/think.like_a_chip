@@ -15,9 +15,12 @@ module control
     logic [2:0]  state;
     logic [31:0] counter;
 
-    always @ (posedge clk) begin
-        if (button_0 == 0) state <= STOP;
-        if (button_1 == 0) begin
+    always_ff @ (posedge clk) begin
+        if (button_0 == 0) begin // RESET
+            state   <= STOP;
+            counter <= 31'd0;
+        end
+        if (button_1 == 0) begin // START
             state   <= START;
             counter <= 31'd6000_0000;
         end
@@ -29,13 +32,17 @@ module control
         end
     end
 
-    always @ (posedge clk) begin
-        case (counter)
-            31'd0000_0000 : led <= RED;
-            31'd3000_0000 : led <= BLUE;
-            31'd6000_0000 : led <= GREEN;
-            default:begin end
-        endcase
+    always_ff @ (posedge clk) begin
+        if(state==STOP)
+            led <= RED;
+        if(state==START) begin
+            case (counter)
+                31'd0000_0000 : led <= RED;
+                31'd3000_0000 : led <= BLUE;
+                31'd6000_0000 : led <= GREEN;
+                default:begin end
+            endcase
+        end
     end
 
 endmodule

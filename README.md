@@ -17,8 +17,6 @@ Install the OS tools for writing bitstreams to FPGA
 
 > [Follow the README.md in 1_ERROR](./1_ERROR/) to exploit a design
 
-> [Follow the README.md in 2_EXTENSION](./2_EXTENSION/) to push your hardware skills even further 
-
 ## Support
 
 > [!TIP]
