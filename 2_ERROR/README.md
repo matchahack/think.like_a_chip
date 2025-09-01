@@ -12,7 +12,7 @@
 > Copy files to container
 ```
 docker ps
-docker cp src <CONTAINER_ID>:/root/bsides_bristol_matchahack
+docker cp src <CONTAINER_ID>:/root/
 ```
 
 > run in container
@@ -21,4 +21,4 @@ cd src
 make build && make load
 ```
 
-![guide](../DEPS/guide.png)
+![guide](../0_GETTING_STARTED/guide.png)

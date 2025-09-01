@@ -1,0 +1,3 @@
+docker login
+docker tag bsides_bristol_matchahack_img alienflip/bsides_bristol_matchahack_img:latest
+docker push alienflip/bsides_bristol_matchahack_img:latest

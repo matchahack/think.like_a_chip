@@ -4,8 +4,6 @@
 *control_tb.vcd
 *.fs
 */*.fs
-DEPS/.python-version
-2_EXTENSION/*.sv
-2_EXTENSION/Makefile
-2_EXTENSION/hints/.solution*
 3_TEST/
+
+Dockerfile copy*

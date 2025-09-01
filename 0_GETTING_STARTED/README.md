@@ -45,7 +45,7 @@ git clone https://github.com/matchahack/think.like_a_chip.git
 
 3. Find out what the name of the USB is in WSL:
 ```
-ls /dev/
+ls /dev/ttyUSB*
 ```
 
 ## Install Docker
@@ -58,16 +58,12 @@ ls /dev/
 1. To build your docker image, run the following in your `wsl` terminal:
 ```
 cd /home/$USER/think.like_a_chip/
-docker build --no-cache -t bsides_bristol_matchahack_img .
+docker build --no-cache -t bsides_bristol_think_like_a_chip .
 ```
-
-> [!WARNING]
-> If at some step this fails, then run again from the last checkpoint using: `docker build -t bsides_bristol_matchahack_img .`
 
 2. To spin-up your docker container in order to build FPGA Bitstreams, run the following in your:
 ```
-docker images
-docker run -it --privileged --device=/dev/ttyUSB1 <IMAGE_ID>
+docker run -it --privileged --device=/dev/ttyUSB0 $(docker images -q bsides_bristol_think_like_a_chip)
 ```
 
 ## Build and test a bitstream

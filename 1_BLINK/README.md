@@ -10,8 +10,8 @@
 
 > Run the following from `wsl` to copy the source files to your container:
 ```
-docker ps
-docker cp src <CONTAINER_ID>:/root/bsides_bristol_matchahack
+cd /home/$USER/think.like_a_chip/1_BLINK/
+docker cp src $(docker ps -q --filter "ancestor=bsides_bristol_think_like_a_chip"):/root/bsides_bristol_matchahack
 ```
 
 > Now in your container, run the following to program the FPGA:
@@ -20,4 +20,4 @@ cd src
 make build && make load
 ```
 
-![guide](../DEPS/guide.png)
+![guide](../0_GETTING_STARTED/guide.png)
