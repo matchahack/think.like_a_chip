@@ -3,14 +3,16 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
-RUN apt-get update && apt-get upgrade -y --fix-missing && \
-    apt-get install -y \
+RUN apt-get update && apt-get upgrade -y 
+RUN apt-get install -y \
     make build-essential libssl-dev zlib1g-dev \
     libftdi1-2 libftdi1-dev libhidapi-hidraw0 libhidapi-dev \
-    libudev-dev pkg-config g++ clang bison flex \
+    libudev-dev pkg-config g++ clang bison flex 
+RUN apt-get install -y \
     libffi-dev liblzma-dev git libboost-all-dev libeigen3-dev \
     gawk tcl-dev iverilog \
-    libbz2-dev libreadline-dev \
+    libbz2-dev libreadline-dev
+RUN apt-get install -y \
     libsqlite3-dev wget curl llvm \
     libncursesw5-dev xz-utils \
     tk-dev libxml2-dev libxmlsec1-dev \

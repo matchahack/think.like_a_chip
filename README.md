@@ -2,22 +2,16 @@
 
 Welcome! If you're here, I hope you want to learn a little about digital logic and secure logic design 📟
 
-## Install FPGA Toolchain
+## Getting started
 
-Install the OS tools for writing bitstreams to FPGA
+Install the OS tools for writing bitstreams to FPGA, then continue on to hardware design: 
 
-> [Follow the README.md in the dependencies directory](./DEPS/)
+> [Follow the README.md](./0_GETTING_STARTED/)
 
-## Build FPGA Designs
+## Support
 
 > [!IMPORTANT]
 > You will see some `hint/` subdirectories. These contain multiple hints. Try not to use them - but also remember to avoid being stuck on a problem for a long time!
-
-> [Follow the README.md in 0_BLINK](./0_BLINK/) to get a light to blink
-
-> [Follow the README.md in 1_ERROR](./1_ERROR/) to exploit a design
-
-## Support
 
 > [!TIP]
 > Please do join [here](https://discord.gg/8AbRrbnU5W) for tech-support!

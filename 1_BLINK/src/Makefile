@@ -8,6 +8,7 @@ build:
 	nextpnr-himbaechel --json ${TOP}.json --write ${TOP}.json --device ${DEVICE} --vopt cst=${BOARD}.cst --vopt family=${FAMILY}
 	gowin_pack -d ${DEVICE} -o ${TOP}.fs ${TOP}.json
 	mv *.fs *.json bin/
-
+load:
+	openFPGALoader -b ${BOARD}${SIZE} -f --verbose bin/${TOP}.fs
 clean:
 	rm bin/*
