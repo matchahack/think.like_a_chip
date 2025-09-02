@@ -7,8 +7,7 @@ build:
 	yosys -p "read_verilog -sv ${TOP}.sv; synth_gowin -json ${TOP}.json"
 	nextpnr-himbaechel --json ${TOP}.json --write ${TOP}.json --device ${DEVICE} --vopt cst=${BOARD}.cst --vopt family=${FAMILY}
 	gowin_pack -d ${DEVICE} -o ${TOP}.fs ${TOP}.json
-	mv *.fs *.json bin/
 load:
-	openFPGALoader -b ${BOARD}${SIZE} -f --verbose bin/${TOP}.fs
+	openFPGALoader -b ${BOARD}${SIZE} -f --verbose ${TOP}.fs
 clean:
 	rm bin/*
