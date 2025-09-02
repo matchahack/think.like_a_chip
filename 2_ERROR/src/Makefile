@@ -9,5 +9,3 @@ build:
 	gowin_pack -d ${DEVICE} -o ${TOP}.fs ${TOP}.json
 load:
 	openFPGALoader -b ${BOARD}${SIZE} -f --verbose ${TOP}.fs
-clean:
-	rm bin/*

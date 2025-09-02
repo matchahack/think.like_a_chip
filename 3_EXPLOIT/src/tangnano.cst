@@ -1,0 +1,49 @@
+IO_LOC  "clk"               47;
+IO_PORT "clk"               PULL_MODE=UP;
+
+IO_LOC  "rst"               29;
+IO_PORT "rst"               IO_TYPE=LVCMOS33;
+IO_PORT "rst"               PULL_MODE=UP;
+
+IO_LOC  "led[0]"            9;
+IO_PORT "led[0]"            IO_TYPE=LVCMOS33;
+IO_PORT "led[0]"            PULL_MODE=UP;
+IO_LOC  "led[1]"            10;
+IO_PORT "led[1]"            IO_TYPE=LVCMOS33;
+IO_PORT "led[1]"            PULL_MODE=UP;
+IO_LOC  "led[2]"            11;
+IO_PORT "led[2]"            IO_TYPE=LVCMOS33;
+IO_PORT "led[2]"            PULL_MODE=UP;
+
+IO_LOC  "button_0"          13;
+IO_PORT "button_0"          IO_TYPE=LVCMOS33;
+IO_PORT "button_0"          PULL_MODE=UP;
+
+IO_LOC  "button_1"          44;
+IO_PORT "button_1"          IO_TYPE=LVCMOS33;
+IO_PORT "button_1"          PULL_MODE=UP;
+
+IO_LOC  "password_input[0]" 23;
+IO_PORT "password_input[0]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[0]" PULL_MODE=UP;
+IO_LOC  "password_input[1]" 22;
+IO_PORT "password_input[1]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[1]" PULL_MODE=UP;
+IO_LOC  "password_input[2]" 18;
+IO_PORT "password_input[2]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[2]" PULL_MODE=UP;
+IO_LOC  "password_input[3]" 17;
+IO_PORT "password_input[3]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[3]" PULL_MODE=UP;
+IO_LOC  "password_input[4]" 16;
+IO_PORT "password_input[4]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[4]" PULL_MODE=UP;
+IO_LOC  "password_input[5]" 35;
+IO_PORT "password_input[5]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[5]" PULL_MODE=UP;
+IO_LOC  "password_input[6]" 34;
+IO_PORT "password_input[6]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[6]" PULL_MODE=UP;
+IO_LOC  "password_input[7]" 20;
+IO_PORT "password_input[7]" IO_TYPE=LVCMOS33;
+IO_PORT "password_input[7]" PULL_MODE=UP;

@@ -1,0 +1,3 @@
+docker login
+docker tag bsides_tlac alienflip/think_like_a_chip_full:latest
+docker push alienflip/think_like_a_chip_full:latest

@@ -1,3 +1,0 @@
-docker login
-docker tag think_like_a_chip alienflip/think_like_a_chip:latest
-docker push alienflip/think_like_a_chip:latest

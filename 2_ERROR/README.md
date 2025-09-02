@@ -11,7 +11,7 @@
 
 > Run the following from `wsl` to copy the source files to your container:
 ```
-docker ps
+cd /home/$USER/think.like_a_chip/2_ERROR/
 docker cp src $(docker ps -q --filter "ancestor=bsides_tlac"):/root/
 ```
 

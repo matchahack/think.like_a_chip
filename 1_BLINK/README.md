@@ -3,6 +3,9 @@
 > [!NOTE]
 > The `buttons on the tang-nano` will make the `lights switch`!
 
+> [!NOTE]
+> You can change the code in `/src/control.sv`, this is what will directly affect the behaviour of the FPGA
+
 > [!TIP]
 > Run the following from your terminal to build and load the design to your FPGA:
 

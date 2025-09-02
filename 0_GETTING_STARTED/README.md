@@ -3,7 +3,7 @@
 ## Install Windows-WSL
 
 > [!NOTE]
-> If you have not installed wsl-2, then follow this section first. All commands should be executed from `Powershell` as Admin. You may need to restart your PC for these changes to take effect.
+> If you have not installed `wsl`, then follow this section first. All commands should be executed from `Powershell` as Admin. You may need to restart your PC for these changes to take effect.
 
 0. Type `Powershell` into the search bar, right click, and select `Run as Admin`
 
@@ -53,12 +53,12 @@ ls /dev/ttyUSB*
 > [!NOTE]
 > If you do not have Docker installed, then [install docker desktop](https://www.docker.com/). This might log you out in order for changes to take effect.
 
-0. When docker is installed, follow any prompts.
+0. When docker is installed, follow any prompts
 
-1. To build your docker image, run the following in your `wsl` terminal:
+1. To pull your docker image, run the following in your `wsl` terminal:
 ```
-cd /home/$USER/think.like_a_chip/
-docker build --no-cache -t bsides_tlac .
+docker pull alienflip/think_like_a_chip_full
+docker tag alienflip/think_like_a_chip_full bsides_tlac
 ```
 
 2. To spin-up your docker container in order to build FPGA Bitstreams, run the following in your `wsl` terminal:

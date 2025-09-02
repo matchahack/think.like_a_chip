@@ -4,6 +4,4 @@
 *control_tb.vcd
 *.fs
 */*.fs
-3_TEST/
-
-Dockerfile copy*
+X_TEST/
