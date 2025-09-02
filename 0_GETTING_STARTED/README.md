@@ -58,12 +58,12 @@ ls /dev/ttyUSB*
 1. To build your docker image, run the following in your `wsl` terminal:
 ```
 cd /home/$USER/think.like_a_chip/
-docker build --no-cache -t bsides_bristol_think_like_a_chip .
+docker build --no-cache -t bsides_tlac .
 ```
 
-2. To spin-up your docker container in order to build FPGA Bitstreams, run the following in your:
+2. To spin-up your docker container in order to build FPGA Bitstreams, run the following in your `wsl` terminal:
 ```
-docker run -it --privileged --device=/dev/ttyUSB0 $(docker images -q bsides_bristol_think_like_a_chip)
+docker run -it --privileged --device=/dev/ttyUSB0 $(docker images -q bsides_tlac)
 ```
 
 ## Build and test a bitstream

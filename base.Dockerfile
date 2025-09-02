@@ -39,3 +39,9 @@ RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc | \
 RUN echo "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main" > /etc/apt/sources.list.d/kitware.list
 RUN apt-get update && apt-get install -y --no-install-recommends cmake && \
     rm -rf /var/lib/apt/lists/*
+
+# Create a working directory
+WORKDIR /root/bsides_bristol_matchahack
+RUN git clone https://github.com/matchahack/nextpnr.git
+RUN git clone https://github.com/matchahack/openFPGALoader.git
+RUN git clone https://github.com/matchahack/yosys.git

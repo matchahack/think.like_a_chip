@@ -1,3 +1,3 @@
 docker login
-docker tag bsides_bristol_matchahack_img alienflip/bsides_bristol_matchahack_img:latest
-docker push alienflip/bsides_bristol_matchahack_img:latest
+docker tag think_like_a_chip alienflip/think_like_a_chip:latest
+docker push alienflip/think_like_a_chip:latest

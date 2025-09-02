@@ -9,13 +9,13 @@
 > [!TIP]
 > Run the following from your terminal to build and load the design to your FPGA:
 
-> Copy files to container
+> Run the following from `wsl` to copy the source files to your container:
 ```
 docker ps
-docker cp src <CONTAINER_ID>:/root/
+docker cp src $(docker ps -q --filter "ancestor=bsides_tlac"):/root/
 ```
 
-> run in container
+> Now in your container, run the following to program the FPGA:
 ```
 cd src 
 make build && make load
