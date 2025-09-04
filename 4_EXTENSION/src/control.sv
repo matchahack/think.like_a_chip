@@ -9,7 +9,7 @@ module red_blink_led (
     output logic [2:0]  led
 );
     // === Constant definitions === //
-    localparam [17:0] SECRET_PASSWORD = 18'h4000;
+    localparam [9:0] SECRET_PASSWORD = 11'b0001000000;
     localparam integer BLINK_PERIOD = 24_000_000;  // ~250ms @ 24MHz
     localparam [2:0] RED = 3'b110;
     localparam [2:0] OFF = 3'b111;
@@ -19,11 +19,11 @@ module red_blink_led (
 
     // === Registers === //
     logic [25:0] blink_counter;
-    logic [17:0] curr_index;
+    logic [9:0] curr_index;
     integer check_index;
     logic [2:0] device_state;
     logic led_state;
-    logic bit_pressed;
+    logic bit_pressed, bit_pressed_last;
 
     // Debounced button modules
     logic clean_button_0, clean_button_1;
@@ -56,10 +56,11 @@ module red_blink_led (
                 
                 COMPARING: begin
                     led <= (led_state ? RED : OFF);
+                    bit_pressed_last <= bit_pressed && !SECRET_PASSWORD[curr_index];
                     if (blink_counter >= BLINK_PERIOD) begin
                         blink_counter <= 0;
                         led_state     <= ~led_state;
-                        if (bit_pressed && SECRET_PASSWORD[curr_index]) begin
+                        if (bit_pressed && SECRET_PASSWORD[curr_index] && bit_pressed_last) begin
                             device_state <= SUCCESS;
                         end
                         else begin

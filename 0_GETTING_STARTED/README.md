@@ -63,7 +63,7 @@ docker tag alienflip/think_like_a_chip_full bsides_tlac
 
 2. To spin-up your docker container in order to build FPGA Bitstreams, run the following in your `wsl` terminal:
 ```
-docker run -it --privileged --device=/dev/ttyUSB0 $(docker images -q bsides_tlac)
+docker run -it --privileged --device=/dev/ttyUSB0 --device=/dev/ttyUSB1 $(docker images -q bsides_tlac)
 ```
 
 ## Build and test a bitstream
