@@ -25,7 +25,7 @@ module control
             counter <= 31'd6000_0000;
         end
         else if (state == START) begin
-            if (counter < 31'd6000_0000)
+            if (counter < 31'd9000_0000)
                 counter <= counter + 1;
             else
                 counter <= 31'd0;
